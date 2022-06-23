@@ -9,14 +9,27 @@ class Location:
     storage_capacity: int
     size: Item.Size
 
-    def __init__(self, storage_capacity):
+    def __init__(self, storage_capacity, size: Item.Size):
         self.storage_capacity = storage_capacity
+        self.size = size
 
-    def has_room(self, item: Item) -> bool:
-        # Guarantee the Location in storage has room
-        if item.size < self.storage_capacity:
-            return True
-        return False
+    def __init__(self, storage_capacity, x: int, y: int, z: int):
+        self.storage_capacity = storage_capacity
+        self.size.x = x
+        self.size.y = y
+        self.size.z = z
+
+    def get_remaining_storage(self) -> Item.Size:
+        # Calculate the remaining size in the current location
+        remaining_size: Item.Size
+        remaining_size.x = self.size.x
+        remaining_size.y = self.size.y
+        remaining_size.z = self.size.z
+        for item in self.item:
+            remaining_size.x -= item.size.x
+            remaining_size.y -= item.size.y
+            remaining_size.z -= item.size.z
+        return remaining_size
 
     def add_item(self, item: Item) -> bool:
         # Add item to the storage Location and return True if success

@@ -29,3 +29,6 @@ class Size:
         self.x = x
         self.y = y
         self.z = z
+
+    def __eq__(self, other):
+        return self.x == other.x & self.y == other.y & self.z == other.z
