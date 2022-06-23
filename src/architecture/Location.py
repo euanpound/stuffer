@@ -3,10 +3,11 @@ import Item
 
 class Location:
     """
-    Blah blah blah
+    A class representing an individual storage location
     """
-    item: Item
+    item: [Item]
     storage_capacity: int
+    size: Item.Size
 
     def __init__(self, storage_capacity):
         self.storage_capacity = storage_capacity
@@ -30,8 +31,4 @@ class Location:
             item = None
             return True
         return False
-
-    def retrieve_item(self) -> Item:
-        # Return the item if no item exists it returns None
-        return self.item()
 

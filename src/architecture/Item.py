@@ -16,5 +16,16 @@ class Item:
         self.identification = identification
         self.size = size
 
-    def get_id(self):
-        return self.identification
+
+class Size:
+    """
+    A class representing the 3d size of an item
+    """
+    x: int
+    y: int
+    z: int
+
+    def __init__(self, x: int, y: int, z: int):
+        self.x = x
+        self.y = y
+        self.z = z
