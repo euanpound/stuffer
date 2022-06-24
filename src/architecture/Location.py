@@ -41,7 +41,7 @@ class Location:
     def remove_item(self) -> bool:
         # Remove the item in storage return False if no item or True if success
         if self.item:
-            item = None
+            self.item = None
             return True
         return False
 
